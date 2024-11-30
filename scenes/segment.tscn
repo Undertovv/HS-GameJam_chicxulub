@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://w2hh7583bu47"]
+
+[ext_resource type="Script" path="res://scripts/segment/segment.gd" id="1_krjw4"]
+
+[node name="Segment" type="Node2D"]
+script = ExtResource("1_krjw4")
+
+[node name="Interactions" type="TileMapLayer" parent="."]
