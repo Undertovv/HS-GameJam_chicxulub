@@ -11,6 +11,8 @@ const LAST_INTERACTABLE_ID: int = 2
 var _building_layout: TileMapLayer = $Building
 @onready
 var _interactions: TileMapLayer = $Interactions
+@onready
+var _death_barrier: TileMapLayer = $DragonForce
 
 func _ready() -> void:
 	randomise_layout()
@@ -18,6 +20,13 @@ func _ready() -> void:
 func randomise_layout() -> void:
 	for x in GRID_WIDTH:
 		for y in GRID_HEIGHT:
+			_building_layout.set_cell(
+				Vector2i(x, y)
+			)
+			_interactions.set_cell(
+				Vector2i(x, y), 
+			)
+			
 			# Cells with a window have a value of 0
 			var window: int = randi_range(0, 1)
 			
@@ -47,3 +56,6 @@ func randomise_layout() -> void:
 ## Validates the layout of the segment to ensure it can be beaten
 func _validate_layout() -> bool:
 	return true
+	
+func set_death_barrier_enabled(enabled: bool) -> void:
+	_death_barrier.enabled = enabled

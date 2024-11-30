@@ -6,9 +6,10 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="GameState" type="Node" parent="." node_paths=PackedStringArray("scoreText")]
+[node name="GameState" type="Node" parent="." node_paths=PackedStringArray("scoreText", "_segment")]
 script = ExtResource("1_8ehgd")
 scoreText = NodePath("../ScoreText")
+_segment = NodePath("../Segment")
 
 [node name="Segment" parent="." instance=ExtResource("2_bhk03")]
 

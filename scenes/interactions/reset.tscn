@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdkqtos03js7g"]
+
+[ext_resource type="Script" path="res://scripts/interactables/reset_interactable.gd" id="1_ytajp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xywut"]
+size = Vector2(120, 256)
+
+[node name="Reset" type="Area2D"]
+monitoring = false
+script = ExtResource("1_ytajp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xywut")

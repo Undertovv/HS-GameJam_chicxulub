@@ -1,12 +1,14 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://c3xf1on6mvmfg"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c3xf1on6mvmfg"]
 
 [ext_resource type="PackedScene" uid="uid://4qdsng20oot0" path="res://scenes/interactions/death.tscn" id="1_lcg1g"]
 [ext_resource type="PackedScene" uid="uid://c12ncnaiaxlle" path="res://scenes/interactions/cat_normal.tscn" id="2_0npb2"]
+[ext_resource type="PackedScene" uid="uid://bdkqtos03js7g" path="res://scenes/interactions/reset.tscn" id="3_jdott"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m0wl1"]
 resource_name = "interactions"
 scenes/1/scene = ExtResource("1_lcg1g")
 scenes/2/scene = ExtResource("2_0npb2")
+scenes/3/scene = ExtResource("3_jdott")
 
 [resource]
 tile_size = Vector2i(120, 256)

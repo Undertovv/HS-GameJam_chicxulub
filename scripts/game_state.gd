@@ -4,6 +4,9 @@ extends Node
 @export
 var scoreText : RichTextLabel
 
+@export
+var _segment: Segment
+
 #region Singleton
 static var _instance: GameState
 
@@ -34,5 +37,12 @@ signal player_died
 
 ## Kills the player
 func johnathon() -> void:
+	#get_tree().quit()
 	player_died.emit()
+#endregion
+
+#region Segment Resetting
+func reset_segment() -> void:
+	_segment.set_death_barrier_enabled(false)
+	_segment.randomise_layout()
 #endregion
