@@ -4,8 +4,12 @@ extends Node2D
 const GRID_WIDTH: int = 6
 const GRID_HEIGHT: int = 5
 
+const LAST_INTERACTABLE_ID: int = 2
+
 @onready
 var _building_layout: TileMapLayer = $Building
+@onready
+var _interactions: TileMapLayer = $Interactions
 
 func _ready() -> void:
 	randomise_layout()
@@ -21,6 +25,13 @@ func randomise_layout() -> void:
 			)
 			
 			if window == 0:
-				# Window was spawned, can create interactable
-				pass
+				var interaction_id: int = randi_range(0, LAST_INTERACTABLE_ID)
+				
+				if interaction_id != 0:
+					_interactions.set_cell(
+							Vector2i(x, y), 
+							0, 
+							Vector2i.ZERO,
+							interaction_id
+						)
 			
