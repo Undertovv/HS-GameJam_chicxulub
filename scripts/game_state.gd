@@ -7,6 +7,9 @@ var scoreText : RichTextLabel
 @export
 var _segment: Segment
 
+@export
+var _player: Player
+
 #region Singleton
 static var _instance: GameState
 
@@ -44,5 +47,15 @@ func johnathon() -> void:
 #region Segment Resetting
 func reset_segment() -> void:
 	_segment.set_death_barrier_enabled(false)
+	get_tree().call_group("neck", "queue_free")
 	_segment.randomise_layout()
+	
+	_player.position = Vector2(_player.position.x, 1408)
+	_player.direction = Vector2.UP
+	_player.wayPoint = _player.position + (Vector2.UP * 256)
+	_player.waypoint_reached.connect(_enable_the_death_barrier)
+	
+func _enable_the_death_barrier() -> void:
+	_segment.set_death_barrier_enabled(true)
+	_player.waypoint_reached.disconnect(_enable_the_death_barrier)
 #endregion

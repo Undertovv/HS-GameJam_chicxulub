@@ -14,6 +14,8 @@ var distanceTraveled = 0 ##Used for tracking trail sprite laying
 const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
 const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
 
+signal waypoint_reached
+
 func _ready() -> void:
 	wayPoint = Vector2(self.position.x, self.position.y - fuckingy)
 
@@ -31,6 +33,7 @@ func _process(delta: float) -> void:
 	
 	if self.position.distance_to(wayPoint) < 5:
 		
+		waypoint_reached.emit()
 		self.position = wayPoint
 		distanceTraveled+=1
 
