@@ -21,6 +21,25 @@ window/size/viewport_height=1280
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 
+[input]
+
+pivotUp={
+"deadzone": 0.5,
+"events": []
+}
+pivotDown={
+"deadzone": 0.5,
+"events": []
+}
+pivotLeft={
+"deadzone": 0.5,
+"events": []
+}
+pivotRight={
+"deadzone": 0.5,
+"events": []
+}
+
 [rendering]
 
 renderer/rendering_method="mobile"
