@@ -8,6 +8,7 @@
 [node name="Player" type="Node2D"]
 position = Vector2(68, 32)
 script = ExtResource("1_72g2y")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, 30)
