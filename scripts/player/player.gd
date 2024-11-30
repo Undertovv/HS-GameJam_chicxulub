@@ -12,7 +12,7 @@ var wayPoint = Vector2(0, 0)
 @export var fuckingy = 256 ##Distance between waypoints - Y
 var distanceTraveled = 0 ##Used for tracking trail sprite laying
 const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
-const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
+const horizontal =preload("res://sprites/Dino/DinoNeckHorizontal.png")
 
 func _ready() -> void:
 	wayPoint = Vector2(self.position.x, self.position.y - fuckingy)
@@ -37,19 +37,19 @@ func _process(delta: float) -> void:
 		
 		if direction == Vector2(0, -1): #Down
 			wayPoint = self.position + Vector2(0, -fuckingy)
-			trail(verticle)
+			trailVerticle()
 			$Sprite2D.set_rotation_degrees(0)
 		if direction == Vector2(-1, 0): #Left
 			wayPoint = self.position + Vector2(-fuckingx, 0)
-			trail(horizontal)
+			trailHorizontal()
 			$Sprite2D.set_rotation_degrees(270)
 		if direction == Vector2(0, 1): #Up
 			wayPoint = self.position + Vector2(0, fuckingy)
-			trail(verticle)
+			trailVerticle()
 			$Sprite2D.set_rotation_degrees(180)
 		if direction == Vector2(1, 0): #Right
 			wayPoint = self.position + Vector2(fuckingx, 0)
-			trail(horizontal)
+			trailHorizontal()
 			$Sprite2D.set_rotation_degrees(90)
 	
 		secureDirection = direction
@@ -61,17 +61,18 @@ func _process(delta: float) -> void:
 func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
 
-func trailHorizotal():
+#TODO left and right trail
+
+func trailHorizontal():
 	var sprite = Sprite2D.new()
 	sprite.texture = horizontal
-	sprite.position = Vector2(self.position[0] - 100, self.position[1])
+	sprite.position = Vector2(self.position[0] + 100, self.position[1])
 	self.get_parent().add_child(sprite)
 
-func trail(facing): #change trail sprite for direction
+func trailVerticle(): #change trail sprite for direction
 	var sprite = Sprite2D.new()
-	sprite.texture = facing
-	sprite.scale = Vector2(0.75, 0.75)
-	sprite.z_index = 0
+	sprite.texture = verticle
+	sprite.z_index = 1
 	sprite.position = Vector2(self.position[0], self.position[1] + 100)
 	self.get_parent().add_child(sprite)
 
