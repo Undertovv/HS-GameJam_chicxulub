@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://w2hh7583bu47"]
+[gd_scene load_steps=4 format=4 uid="uid://w2hh7583bu47"]
 
 [ext_resource type="Script" path="res://scripts/segment/segment.gd" id="1_krjw4"]
 [ext_resource type="TileSet" uid="uid://c3xf1on6mvmfg" path="res://tilesets/interactions.tres" id="2_6voqr"]
@@ -11,5 +11,5 @@ script = ExtResource("1_krjw4")
 tile_set = ExtResource("2_6voqr")
 
 [node name="Building" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 16, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 18, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 20, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 22, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAABAAQAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAIAAQAAAAAAAAADAAIAAQAAAAAAAAACAAIAAQAAAAAAAAABAAIAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAA=")
 tile_set = ExtResource("3_y4upb")
