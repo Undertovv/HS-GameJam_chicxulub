@@ -1,0 +1,10 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cavy4rxmxpe06"]
+
+[ext_resource type="PackedScene" uid="uid://4qdsng20oot0" path="res://scenes/interactions/death.tscn" id="1_lcg1g"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m0wl1"]
+resource_name = "interactions"
+scenes/1/scene = ExtResource("1_lcg1g")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_m0wl1")

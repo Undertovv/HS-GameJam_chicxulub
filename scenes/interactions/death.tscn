@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://4qdsng20oot0"]
+
+[ext_resource type="Script" path="res://scripts/interactables/death_interactable.gd" id="1_j171x"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4dgmq"]
+size = Vector2(20, 20)
+
+[node name="Death" type="Node2D"]
+script = ExtResource("1_j171x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_4dgmq")
