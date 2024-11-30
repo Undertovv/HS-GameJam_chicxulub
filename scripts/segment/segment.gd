@@ -23,3 +23,4 @@ func randomise_layout() -> void:
 			if window == 0:
 				# Window was spawned, can create interactable
 				pass
+			
