@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/interactables/death_interactable.gd" id="1_j171x"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4dgmq"]
-size = Vector2(30, 64)
+size = Vector2(120, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_528oh"]
-size = Vector2(30, 64)
+size = Vector2(120, 256)
 
 [node name="Death" type="Area2D"]
 monitoring = false

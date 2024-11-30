@@ -4,10 +4,10 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a3mhy"]
 texture = ExtResource("1_mvuvg")
-texture_region_size = Vector2i(30, 64)
+texture_region_size = Vector2i(120, 256)
 0:0/0 = 0
 1:0/0 = 0
 
 [resource]
-tile_size = Vector2i(30, 64)
+tile_size = Vector2i(120, 256)
 sources/1 = SubResource("TileSetAtlasSource_a3mhy")
