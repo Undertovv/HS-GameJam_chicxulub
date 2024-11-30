@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4myaoh466fvb"]
+
+[ext_resource type="Texture2D" uid="uid://drvtfyeas5dsj" path="res://sprites/Dino/DinoNeckTurn.png" id="1_7rdxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5kte"]
+size = Vector2(93, 161)
+
+[node name="TouchFluffyTail" type="Sprite2D"]
+texture = ExtResource("1_7rdxb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14.5, 48.5)
+shape = SubResource("RectangleShape2D_t5kte")
