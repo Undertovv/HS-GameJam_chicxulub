@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://4qdsng20oot0"]
+[gd_scene load_steps=4 format=3 uid="uid://4qdsng20oot0"]
 
 [ext_resource type="Script" path="res://scripts/interactables/death_interactable.gd" id="1_j171x"]
+[ext_resource type="SpriteFrames" uid="uid://cfjgq4l0tq3wt" path="res://animation/fire.tres" id="2_mcg5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_528oh"]
 size = Vector2(120, 256)
 
-[node name="Death" type="Area2D"]
+[node name="Death" type="Area2D" node_paths=PackedStringArray("_fire")]
 monitoring = false
 script = ExtResource("1_j171x")
+_fire = NodePath("Fire")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_528oh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_mcg5n")
+frame_progress = 0.721806
