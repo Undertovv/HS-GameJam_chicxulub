@@ -23,3 +23,4 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("3_7vldf")]
+position = Vector2(60, 128)

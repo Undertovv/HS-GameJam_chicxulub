@@ -1,19 +1,20 @@
 extends Node2D
 
-@export var speed = 40
+@export var speed = 160
 ##Direction (Changes on key press)
 var direction = Vector2(0, 1)
 ##Direction the player moves (Based on last key press - Set with direction variable)
 var secureDirection = Vector2(0, 1)
 ##Next point the player is able to move at
 var wayPoint = Vector2(0, 0) 
-@export var fucking = 16 #Distance between waypoints
+@export var fuckingx = 120 #Distance between waypoints
+@export var fuckingy = 256
 var distanceTraveled = 0 ##Used for tracking trail sprite laying
 const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
 const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
 
 func _ready() -> void:
-	wayPoint = Vector2(self.position.x, self.position.y + fucking)
+	wayPoint = Vector2(self.position.x, self.position.y + fuckingy)
 
 # Get his ass movin AND schmoovin.
 func _process(delta: float) -> void:
@@ -34,19 +35,19 @@ func _process(delta: float) -> void:
 
 		
 		if direction == Vector2(0, -1): #Down
-			wayPoint = self.position + Vector2(0, -fucking)
+			wayPoint = self.position + Vector2(0, -fuckingy)
 			trail(verticle)
 			$Sprite2D.set_rotation_degrees(0)
 		if direction == Vector2(-1, 0): #Left
-			wayPoint = self.position + Vector2(-fucking, 0)
+			wayPoint = self.position + Vector2(-fuckingx, 0)
 			trail(horizontal)
 			$Sprite2D.set_rotation_degrees(270)
 		if direction == Vector2(0, 1): #Up
-			wayPoint = self.position + Vector2(0, fucking)
+			wayPoint = self.position + Vector2(0, fuckingy)
 			trail(verticle)
 			$Sprite2D.set_rotation_degrees(180)
 		if direction == Vector2(1, 0): #Right
-			wayPoint = self.position + Vector2(fucking, 0)
+			wayPoint = self.position + Vector2(fuckingx, 0)
 			trail(horizontal)
 			$Sprite2D.set_rotation_degrees(90)
 	
