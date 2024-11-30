@@ -36,15 +36,19 @@ func _process(delta: float) -> void:
 		if direction == Vector2(0, -1): #Down
 			wayPoint = self.position + Vector2(0, -fucking)
 			trail(verticle)
+			$Sprite2D.set_rotation_degrees(0)
 		if direction == Vector2(-1, 0): #Left
 			wayPoint = self.position + Vector2(-fucking, 0)
 			trail(horizontal)
+			$Sprite2D.set_rotation_degrees(270)
 		if direction == Vector2(0, 1): #Up
 			wayPoint = self.position + Vector2(0, fucking)
 			trail(verticle)
+			$Sprite2D.set_rotation_degrees(180)
 		if direction == Vector2(1, 0): #Right
 			wayPoint = self.position + Vector2(fucking, 0)
 			trail(horizontal)
+			$Sprite2D.set_rotation_degrees(90)
 	
 		secureDirection = direction
 	
@@ -55,12 +59,12 @@ func _process(delta: float) -> void:
 func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
 	
-func trail(direction): #change trail sprite for direction
+func trail(facing): #change trail sprite for direction
 	if distanceTraveled % 8 == 1:
 		var sprite = Sprite2D.new()
-		sprite.texture = direction
+		sprite.texture = facing
 		sprite.scale = Vector2(0.5, 0.5)
-		sprite.position = Vector2(self.position[0], self.position[1] - 100.0)
+		sprite.position = Vector2(self.position)
 		self.get_parent().add_child(sprite)
 
 
