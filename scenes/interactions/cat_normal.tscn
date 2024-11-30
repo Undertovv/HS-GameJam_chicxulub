@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3bie5x3tswlw"]
 
-[ext_resource type="Script" path="res://scripts/interactables/score_interactable.gd" id="1_kqqqw"]
-[ext_resource type="Texture2D" uid="uid://bb25d6qsnoqaa" path="res://sprites/blehCat.png" id="2_vc7ld"]
+[ext_resource type="Script" path="res://scripts/interactables/score_interactable.gd" id="1_rmg0s"]
+[ext_resource type="Texture2D" uid="uid://bb25d6qsnoqaa" path="res://sprites/blehCat.png" id="2_th61t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6li8"]
 size = Vector2(238, 238)
 
 [node name="PersonNormal" type="Area2D"]
 monitoring = false
-script = ExtResource("1_kqqqw")
+script = ExtResource("1_rmg0s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vc7ld")
+texture = ExtResource("2_th61t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r6li8")
