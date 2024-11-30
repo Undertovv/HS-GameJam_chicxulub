@@ -11,6 +11,7 @@ var wayPoint = Vector2(0, 0)
 var distanceTraveled = 0 ##Used for tracking trail sprite laying
 const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
 const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
+
 func _ready() -> void:
 	wayPoint = Vector2(self.position.x, self.position.y + fucking)
 
@@ -55,11 +56,12 @@ func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
 	
 func trail(direction): #change trail sprite for direction
-	var sprite = Sprite2D.new()
-	sprite.texture = direction
-	sprite.scale = Vector2(0.2, 0.2)
-	sprite.position = self.position
-	self.get_parent().add_child(sprite)
+	if distanceTraveled % 8 == 1:
+		var sprite = Sprite2D.new()
+		sprite.texture = direction
+		sprite.scale = Vector2(0.5, 0.5)
+		sprite.position = Vector2(self.position[0], self.position[1] - 100.0)
+		self.get_parent().add_child(sprite)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

@@ -1,24 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck83h50o4mawn"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_72g2y"]
-[ext_resource type="Texture2D" uid="uid://bb25d6qsnoqaa" path="res://sprites/blehCat.png" id="2_8jqik"]
+[ext_resource type="Texture2D" uid="uid://c6rkbwf22brv5" path="res://sprites/Dino/DinoHead2.png" id="2_ps3ym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n804"]
+size = Vector2(43.3333, 50.8333)
 
 [node name="Player" type="Node2D"]
 position = Vector2(68, 32)
 script = ExtResource("1_72g2y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(15, 30)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_8jqik")
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ps3ym")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(12, 12)
+position = Vector2(0, -0.5)
 scale = Vector2(1.2, 1.2)
 shape = SubResource("RectangleShape2D_2n804")
 one_way_collision_margin = 0.0
