@@ -2,19 +2,19 @@ extends Node2D
 
 @export var speed = 200
 ##Direction (Changes on key press)
-var direction = Vector2(0, 1)
+var direction = Vector2(0, -1)
 ##Direction the player moves (Based on last key press - Set with direction variable)
-var secureDirection = Vector2(0, 1)
+var secureDirection = Vector2(0, -1)
 ##Next point the player is able to move at
 var wayPoint = Vector2(0, 0) 
-@export var fuckingx = 120 #Distance between waypoints
-@export var fuckingy = 256
+@export var fuckingx = 120 ##Distance between waypoints - X
+@export var fuckingy = 256 ##Distance between waypoints - Y
 var distanceTraveled = 0 ##Used for tracking trail sprite laying
 const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
 const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
 
 func _ready() -> void:
-	wayPoint = Vector2(self.position.x, self.position.y + fuckingy)
+	wayPoint = Vector2(self.position.x, self.position.y - fuckingy)
 
 # Get his ass movin AND schmoovin.
 func _process(delta: float) -> void:

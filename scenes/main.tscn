@@ -12,15 +12,15 @@ scoreText = NodePath("../ScoreText")
 
 [node name="Segment" parent="." instance=ExtResource("2_bhk03")]
 
+[node name="Player" parent="." instance=ExtResource("3_7vldf")]
+position = Vector2(660, 1152)
+
 [node name="ScoreText" type="RichTextLabel" parent="."]
 offset_left = 17.0
 offset_top = 22.0
-offset_right = 98.0
+offset_right = 111.0
 offset_bottom = 62.0
 theme_override_font_sizes/normal_font_size = 25
-text = "Score Text"
+text = "Score: 0"
 fit_content = true
 autowrap_mode = 0
-
-[node name="Player" parent="." instance=ExtResource("3_7vldf")]
-position = Vector2(60, 128)
