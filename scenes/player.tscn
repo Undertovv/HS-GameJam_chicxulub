@@ -8,11 +8,6 @@
 [node name="Player" type="Node2D"]
 script = ExtResource("1_72g2y")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(12, 12)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_8jqik")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -21,3 +16,8 @@ position = Vector2(12, 12)
 scale = Vector2(1.2, 1.2)
 shape = SubResource("RectangleShape2D_2n804")
 one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(12, 12)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_8jqik")

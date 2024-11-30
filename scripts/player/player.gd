@@ -1,19 +1,15 @@
 extends Node2D
 
 @export
-var SPEED = 20.0
+var speed = 2.0
+var direction = Vector2(0, 0)
 
-func _physics_process(delta: float) -> void:
+	#Get his ass movin AND schmoovin.
+func _process(delta: float) -> void:
+	direction = Input.get_vector("pivotLeft","pivotRight","pivotUp","pivotDown")
+	schmoove(direction)
 
-# Get his ass movin AND schmoovin.
-	var yDirection := Input.get_axis("pivotUp", "pivotDown")
-	if yDirection:
-		translate(Vector2(0, 0) * SPEED) # Go North
-	else:
-		translate(Vector2(0, 1) * SPEED) # Go South
-
-	var xDirection := Input.get_axis("pivotLeft", "pivotRight")
-	if xDirection:
-		translate(Vector2(1, 0) * SPEED) # Go East
-	else:
-		translate(Vector2(1, 1) * SPEED) # Go West
+func schmoove(direction):
+	#translate movement collected from proc to translate functions
+	#translate functions will be called when ready
+	translate(direction * speed);
