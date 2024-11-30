@@ -5,7 +5,7 @@ const GRID_WIDTH: int = 6
 const GRID_HEIGHT: int = 5
 
 # This in incredibly stupid and bone headed omg what have you done
-const LAST_INTERACTABLE_ID: int = 2
+const LAST_INTERACTABLE_ID: int = 5
 
 @onready
 var _building_layout: TileMapLayer = $Building

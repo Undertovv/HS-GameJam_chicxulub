@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c12ncnaiaxlle"]
+[gd_scene load_steps=9 format=3 uid="uid://bmjv6psjnxsfo"]
 
-[ext_resource type="Script" path="res://scripts/interactables/score_interactable.gd" id="1_rmg0s"]
-[ext_resource type="Texture2D" uid="uid://q60attmp7glr" path="res://sprites/Kitties/DefaultKitty.png" id="2_nxd8i"]
-[ext_resource type="Texture2D" uid="uid://cj1cr1u77dqfo" path="res://sprites/explosion.png" id="3_m8oad"]
-[ext_resource type="AudioStream" uid="uid://ry560voegswm" path="res://audio/explosion.mp3" id="3_suese"]
+[ext_resource type="Script" path="res://scripts/interactables/score_interactable.gd" id="1_qjvm2"]
+[ext_resource type="Texture2D" uid="uid://bk72ffmh8c5i8" path="res://sprites/Kitties/PinkKitty.png" id="2_1b0ia"]
+[ext_resource type="Texture2D" uid="uid://cj1cr1u77dqfo" path="res://sprites/explosion.png" id="3_mdl74"]
+[ext_resource type="AudioStream" uid="uid://ry560voegswm" path="res://audio/explosion.mp3" id="4_j8e6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6li8"]
 size = Vector2(72, 80)
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_suese")
+"stream": ExtResource("4_j8e6p")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -108,19 +108,19 @@ _data = {
 "explode": SubResource("Animation_n5g2c")
 }
 
-[node name="CatNormal" type="Area2D" node_paths=PackedStringArray("_animation_player")]
+[node name="CatPink" type="Area2D" node_paths=PackedStringArray("_animation_player")]
 monitoring = false
-script = ExtResource("1_rmg0s")
+script = ExtResource("1_qjvm2")
 score = 200
 _animation_player = NodePath("AnimationPlayer")
 
 [node name="Cat" type="Sprite2D" parent="."]
-texture = ExtResource("2_nxd8i")
+texture = ExtResource("2_1b0ia")
 
 [node name="Explosion" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("3_m8oad")
+texture = ExtResource("3_mdl74")
 hframes = 16
 frame = 1
 
