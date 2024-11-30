@@ -1,3 +1,4 @@
+class_name Player
 extends Node2D
 
 @export var speed = 200
@@ -59,12 +60,19 @@ func _process(delta: float) -> void:
 
 func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
-	
+
+func trailHorizotal():
+	var sprite = Sprite2D.new()
+	sprite.texture = horizontal
+	sprite.position = Vector2(self.position[0] - 100, self.position[1])
+	self.get_parent().add_child(sprite)
+
 func trail(facing): #change trail sprite for direction
 	var sprite = Sprite2D.new()
 	sprite.texture = facing
-	sprite.scale = Vector2(1, 1)
-	sprite.position = Vector2(self.position[0], self.position[1])
+	sprite.scale = Vector2(0.75, 0.75)
+	sprite.z_index = 0
+	sprite.position = Vector2(self.position[0], self.position[1] + 100)
 	self.get_parent().add_child(sprite)
 
 

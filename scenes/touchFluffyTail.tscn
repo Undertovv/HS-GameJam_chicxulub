@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5kte"]
 size = Vector2(64, 256)
 
-[node name="TouchFluffyTail" type="Sprite2D"]
+[node name="TouchFluffyTail" type="Sprite2D" groups=["neck"]]
 texture = ExtResource("1_3vvbe")
 
 [node name="Area2D" type="Area2D" parent="."]
