@@ -6,8 +6,8 @@ var secureDirection = Vector2(0, 1)
 var wayPoint = Vector2(0, 0)
 @export var fucking = 16 #Distance between waypoints
 var distanceTraveled = 0 ##Used for tracking trail sprite laying
-const vertShaft = preload("res://sprites/Dino/VerticalMovementNeck.png")
-const horiShaft = preload("res://sprites/Dino/DinoNeckHorizontal.png")
+const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
+const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
 func _ready() -> void:
 	wayPoint = Vector2(self.position.x, self.position.y + fucking)
 
@@ -29,14 +29,18 @@ func _process(delta: float) -> void:
 		distanceTraveled+=1
 
 		
-		if direction == Vector2(0, -1):
+		if direction == Vector2(0, -1): #Down
 			wayPoint = self.position + Vector2(0, -fucking)
-		if direction == Vector2(-1, 0):
+			trail(verticle)
+		if direction == Vector2(-1, 0): #Left
 			wayPoint = self.position + Vector2(-fucking, 0)
-		if direction == Vector2(0, 1):
+			trail(horizontal)
+		if direction == Vector2(0, 1): #Up
 			wayPoint = self.position + Vector2(0, fucking)
-		if direction == Vector2(1, 0):
+			trail(verticle)
+		if direction == Vector2(1, 0): #Right
 			wayPoint = self.position + Vector2(fucking, 0)
+			trail(horizontal)
 	
 		secureDirection = direction
 	
