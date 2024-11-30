@@ -1,6 +1,9 @@
 class_name GameState
 extends Node
 
+@export
+var scoreText : RichTextLabel
+
 #region Singleton
 static var _instance: GameState
 
@@ -20,6 +23,8 @@ var _current_score: int = 0
 
 func add_score(score: int) -> void:
 	_current_score += score
+	var scoreAmount = str(_current_score)
+	scoreText.text = "Score: " + scoreAmount
 	score_changed.emit(_current_score)
 #endregion
 

@@ -1,11 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcrkusgctyve7"]
+[gd_scene load_steps=4 format=3 uid="uid://dcrkusgctyve7"]
 
 [ext_resource type="Script" path="res://scripts/game_state.gd" id="1_8ehgd"]
 [ext_resource type="PackedScene" uid="uid://w2hh7583bu47" path="res://scenes/segment.tscn" id="2_bhk03"]
+[ext_resource type="PackedScene" uid="uid://ck83h50o4mawn" path="res://scenes/player.tscn" id="3_7vldf"]
 
 [node name="Main" type="Node2D"]
 
-[node name="GameState" type="Node" parent="."]
+[node name="GameState" type="Node" parent="." node_paths=PackedStringArray("scoreText")]
 script = ExtResource("1_8ehgd")
+scoreText = NodePath("../ScoreText")
 
 [node name="Segment" parent="." instance=ExtResource("2_bhk03")]
+
+[node name="ScoreText" type="RichTextLabel" parent="."]
+offset_left = 17.0
+offset_top = 22.0
+offset_right = 98.0
+offset_bottom = 62.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Score Text"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Player" parent="." instance=ExtResource("3_7vldf")]
