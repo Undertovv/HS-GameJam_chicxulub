@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://cavy4rxmxpe06"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://c3xf1on6mvmfg"]
 
 [ext_resource type="PackedScene" uid="uid://4qdsng20oot0" path="res://scenes/interactions/death.tscn" id="1_lcg1g"]
 [ext_resource type="PackedScene" uid="uid://d3bie5x3tswlw" path="res://scenes/interactions/person_normal.tscn" id="2_0npb2"]
