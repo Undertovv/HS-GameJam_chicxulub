@@ -9,6 +9,7 @@ size = Vector2(238, 238)
 [node name="PersonNormal" type="Area2D"]
 monitoring = false
 script = ExtResource("1_rmg0s")
+score = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_th61t")
