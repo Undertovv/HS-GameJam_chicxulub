@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed = 160
+@export var speed = 200
 ##Direction (Changes on key press)
 var direction = Vector2(0, 1)
 ##Direction the player moves (Based on last key press - Set with direction variable)
@@ -61,12 +61,11 @@ func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
 	
 func trail(facing): #change trail sprite for direction
-	if distanceTraveled % 8 == 1:
-		var sprite = Sprite2D.new()
-		sprite.texture = facing
-		sprite.scale = Vector2(0.5, 0.5)
-		sprite.position = Vector2(self.position)
-		self.get_parent().add_child(sprite)
+	var sprite = Sprite2D.new()
+	sprite.texture = facing
+	sprite.scale = Vector2(1, 1)
+	sprite.position = Vector2(self.position[0], self.position[1])
+	self.get_parent().add_child(sprite)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
