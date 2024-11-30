@@ -72,6 +72,7 @@ func trailRight():
 func trailUp(): #change trail sprite for direction
 	var sprite = Sprite2D.new()
 	sprite.texture = verticle
+	sprite.scale = Vector2(0.75, 0.75)
 	sprite.z_index = 1
 	sprite.position = Vector2(self.position[0], self.position[1] + 100)
 	self.get_parent().add_child(sprite)

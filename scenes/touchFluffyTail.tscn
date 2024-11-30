@@ -6,6 +6,7 @@
 size = Vector2(64, 256)
 
 [node name="TouchFluffyTail" type="Sprite2D" groups=["neck"]]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_3vvbe")
 
 [node name="Area2D" type="Area2D" parent="."]
