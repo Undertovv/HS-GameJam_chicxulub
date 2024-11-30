@@ -1,9 +1,12 @@
 extends Node2D
 
 @export var speed = 40
+##Direction (Changes on key press)
 var direction = Vector2(0, 1)
+##Direction the player moves (Based on last key press - Set with direction variable)
 var secureDirection = Vector2(0, 1)
-var wayPoint = Vector2(0, 0)
+##Next point the player is able to move at
+var wayPoint = Vector2(0, 0) 
 @export var fucking = 16 #Distance between waypoints
 var distanceTraveled = 0 ##Used for tracking trail sprite laying
 const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
