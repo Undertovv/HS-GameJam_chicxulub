@@ -10,13 +10,13 @@
 
 [node name="GameState" type="Node" parent="." node_paths=PackedStringArray("scoreText", "_segment", "_player", "trailHolder", "_title_ui", "_score_label", "_game_over_ui")]
 script = ExtResource("1_8ehgd")
-scoreText = NodePath("../UI/ScoreText")
+scoreText = NodePath("../UILayer/UI/ScoreText")
 _segment = NodePath("../Segment")
 _player = NodePath("../Player")
 trailHolder = NodePath("../TrailHolder")
-_title_ui = NodePath("../UI/Title")
-_score_label = NodePath("../UI/ScoreText")
-_game_over_ui = NodePath("../UI/GameOver")
+_title_ui = NodePath("../UILayer/UI/Title")
+_score_label = NodePath("../UILayer/UI/ScoreText")
+_game_over_ui = NodePath("../UILayer/UI/GameOver")
 
 [node name="Segment" parent="." instance=ExtResource("2_bhk03")]
 
@@ -25,14 +25,18 @@ position = Vector2(660, 1408)
 
 [node name="TrailHolder" type="Node2D" parent="."]
 
-[node name="UI" type="Control" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UILayer"]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 0
-offset_right = 720.0
-offset_bottom = 1280.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ScoreText" type="RichTextLabel" parent="UI"]
+[node name="ScoreText" type="RichTextLabel" parent="UILayer/UI"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 22.0
@@ -43,9 +47,9 @@ text = "Score: 0"
 fit_content = true
 autowrap_mode = 0
 
-[node name="GameOver" parent="UI" instance=ExtResource("4_t04md")]
+[node name="GameOver" parent="UILayer/UI" instance=ExtResource("4_t04md")]
 visible = false
 layout_mode = 1
 
-[node name="Title" parent="UI" instance=ExtResource("5_6kmq8")]
+[node name="Title" parent="UILayer/UI" instance=ExtResource("5_6kmq8")]
 layout_mode = 1
