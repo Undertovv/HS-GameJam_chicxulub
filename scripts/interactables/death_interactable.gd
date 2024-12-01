@@ -1,4 +1,4 @@
-class_name DeathInteractable
+class_name DeathInteractablea
 extends Interactable
 
 @export

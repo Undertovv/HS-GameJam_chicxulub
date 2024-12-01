@@ -36,7 +36,10 @@ func _process(delta: float) -> void:
 		waypoint_reached.emit()
 		self.position = wayPoint
 		
-		if nextDirection == Vector2(0, -1): #Down
+		if direction == -nextDirection:
+			nextDirection = direction
+		
+		if nextDirection == Vector2(0, -1): #Up
 			if  direction == nextDirection:
 				trailVert("up")
 			elif direction == Vector2.UP and nextDirection == Vector2.RIGHT:
@@ -51,7 +54,7 @@ func _process(delta: float) -> void:
 				trailCorner(90)
 			wayPoint = self.position + Vector2(-fuckingx, 0)
 			$Sprite2D.set_rotation_degrees(270)
-		if nextDirection == Vector2(0, 1): #Up
+		if nextDirection == Vector2(0, 1): #Down
 			wayPoint = self.position + Vector2(0, fuckingy)
 			trailVert("down")
 			$Sprite2D.set_rotation_degrees(180)
@@ -72,10 +75,11 @@ func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
 
 func trailCorner(rot):
-	var cornerTail = corner.instantiate()
-	cornerSprite.set_rotation_degrees(rot)
-	cornerSprite.position = Vector2(self.position)
-	trailHolder.add_child(cornerSprite)
+	pass
+	#var cornerTail = corner.instantiate()
+	#cornerTail.set_rotation_degrees(rot)
+	#cornerTail.position = Vector2(self.position)
+	#trailHolder.add_child(cornerTail)
 
 func trailHori(dir):
 	var horiTail = horizontal.instantiate()
