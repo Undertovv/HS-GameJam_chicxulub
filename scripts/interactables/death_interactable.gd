@@ -5,7 +5,8 @@ extends Interactable
 var _fire: AnimatedSprite2D
 
 func _ready() -> void:
-	_fire.play("default")
+	if _fire != null:
+		_fire.play("default")
 
 func run_interaction() -> void:
 	GameState.get_instance().johnathon()

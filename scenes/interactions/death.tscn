@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cfjgq4l0tq3wt" path="res://animation/fire.tres" id="2_mcg5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_528oh"]
-size = Vector2(120, 256)
+size = Vector2(78, 94)
 
 [node name="Death" type="Area2D" node_paths=PackedStringArray("_fire")]
 monitoring = false
@@ -12,6 +12,7 @@ script = ExtResource("1_j171x")
 _fire = NodePath("Fire")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_528oh")
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]

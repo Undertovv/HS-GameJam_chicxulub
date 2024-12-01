@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdp15j1d1w352"]
+[gd_scene load_steps=5 format=3 uid="uid://cdp15j1d1w352"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_qihnp"]
+[ext_resource type="Texture2D" uid="uid://b7uiu42hbq45o" path="res://sprites/Buttons/Restart/RestartButtonNormal.png" id="2_j4vw6"]
+[ext_resource type="Texture2D" uid="uid://bt80o87u4ipmv" path="res://sprites/Buttons/Restart/RestartButtonPressed.png" id="3_c0ov3"]
+[ext_resource type="Texture2D" uid="uid://1040uiiwx5rg" path="res://sprites/Buttons/Restart/RestartButtonHoverl.png" id="4_37crn"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -28,16 +31,21 @@ anchor_right = 0.875
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
 alignment = 1
 
 [node name="GameOver" type="Label" parent="Root"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QuitToTitle" type="Button" parent="Root"]
+[node name="QuitToTitle" type="TextureButton" parent="Root"]
 layout_mode = 2
-text = "Quit to Title"
+texture_normal = ExtResource("2_j4vw6")
+texture_pressed = ExtResource("3_c0ov3")
+texture_hover = ExtResource("4_37crn")
+stretch_mode = 3
 
 [connection signal="pressed" from="Root/QuitToTitle" to="." method="_on_quit_to_title_pressed"]

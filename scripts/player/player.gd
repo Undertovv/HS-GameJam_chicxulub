@@ -8,9 +8,9 @@ var direction = Vector2(0, -1)
 var wayPoint = Vector2(0, 0) 
 @export var fuckingx = 120 ##Distance between waypoints - X
 @export var fuckingy = 256 ##Distance between waypoints - Y
-const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
-const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
-const corner = preload("res://sprites/Dino/DinoNeckTurn.png")
+const verticle = preload("res://scenes/touchFluffyTail.tscn")
+const horizontal = preload("res://scenes/sidewaysPickle.tscn")
+const corner = preload("res://scenes/cornerNeck.tscn")
 var trailHolder : Node2D 
 var nextDirection = Vector2(0, -1)
 
@@ -72,32 +72,29 @@ func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
 
 func trailCorner(rot):
-	var cornerSprite = Sprite2D.new()
-	cornerSprite.texture = corner
+	var cornerTail = corner.instantiate()
 	cornerSprite.set_rotation_degrees(rot)
 	cornerSprite.position = Vector2(self.position)
 	trailHolder.add_child(cornerSprite)
 
 func trailHori(dir):
-	var sprite = Sprite2D.new()
-	sprite.texture = horizontal
+	var horiTail = horizontal.instantiate()
 	if dir == "right":
-		sprite.position = Vector2(self.position[0] + 100, self.position[1])
+		horiTail.position = Vector2(self.position[0] + 100, self.position[1])
 	else:
-		sprite.position = Vector2(self.position[0] - 100, self.position[1])
+		horiTail.position = Vector2(self.position[0] - 100, self.position[1])
 
-	trailHolder.add_child(sprite)
+	trailHolder.add_child(horiTail)
 
 func trailVert(dir): #change trail sprite for direction
-	var sprite = Sprite2D.new()
-	sprite.texture = verticle
-	sprite.scale = Vector2(0.75, 1)
-	sprite.z_index = 1
+	var vertTail = verticle.instantiate()
+	vertTail.scale = Vector2(0.75, 1)
+	vertTail.z_index = 1
 	if dir == "up":
-		sprite.position = Vector2(self.position[0], self.position[1] + 150)
+		vertTail.position = Vector2(self.position[0], self.position[1] + 150)
 	else:
-		sprite.position = Vector2(self.position[0], self.position[1] - 150)
-	trailHolder.add_child(sprite)
+		vertTail.position = Vector2(self.position[0], self.position[1] - 150)
+	trailHolder.add_child(vertTail)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
