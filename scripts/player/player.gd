@@ -37,23 +37,30 @@ func _process(delta: float) -> void:
 		self.position = wayPoint
 		
 		if nextDirection == Vector2(0, -1): #Down
-			wayPoint = self.position + Vector2(0, -fuckingy)
 			if  direction == nextDirection:
-				#some shit goes in here for corners - do later
 				trailVert("up")
+			elif direction == Vector2.UP and nextDirection == Vector2.RIGHT:
+				trailCorner(270)
+			wayPoint = self.position + Vector2(0, -fuckingy)
 			$Sprite2D.set_rotation_degrees(0)
-		if nextDirection == Vector2(-1, 0): #Left
 			
+		if nextDirection == Vector2(-1, 0): #Left
+			if  direction == nextDirection:
+				trailHori("right")
+			elif direction == Vector2.UP and nextDirection == Vector2.LEFT:
+				trailCorner(90)
 			wayPoint = self.position + Vector2(-fuckingx, 0)
-			trailHori("right")
 			$Sprite2D.set_rotation_degrees(270)
 		if nextDirection == Vector2(0, 1): #Up
 			wayPoint = self.position + Vector2(0, fuckingy)
 			trailVert("down")
 			$Sprite2D.set_rotation_degrees(180)
 		if nextDirection == Vector2(1, 0): #Right
+			if  direction == nextDirection:
+				trailHori("left")
+			elif direction == Vector2.UP and nextDirection == Vector2.RIGHT:
+				trailCorner(0)
 			wayPoint = self.position + Vector2(fuckingx, 0)
-			trailHori("left")
 			$Sprite2D.set_rotation_degrees(90)
 			
 		direction = nextDirection
@@ -67,7 +74,9 @@ func shmoeve(dir: Vector2, delta: float):
 func trailCorner(rot):
 	var cornerSprite = Sprite2D.new()
 	cornerSprite.texture = corner
-	$cornerSprite.set_rotation_degrees(rot)
+	cornerSprite.set_rotation_degrees(rot)
+	cornerSprite.position = Vector2(self.position)
+	trailHolder.add_child(cornerSprite)
 
 func trailHori(dir):
 	var sprite = Sprite2D.new()
