@@ -42,19 +42,19 @@ func _process(delta: float) -> void:
 		
 		if direction == Vector2(0, -1): #Down
 			wayPoint = self.position + Vector2(0, -fuckingy)
-			trailUp()
+			trailVert("up")
 			$Sprite2D.set_rotation_degrees(0)
 		if direction == Vector2(-1, 0): #Left
 			wayPoint = self.position + Vector2(-fuckingx, 0)
-			trailRight()
+			trailHori("right")
 			$Sprite2D.set_rotation_degrees(270)
 		if direction == Vector2(0, 1): #Up
 			wayPoint = self.position + Vector2(0, fuckingy)
-			trailUp()
+			trailVert("down")
 			$Sprite2D.set_rotation_degrees(180)
 		if direction == Vector2(1, 0): #Right
 			wayPoint = self.position + Vector2(fuckingx, 0)
-			trailRight()
+			trailHori("left")
 			$Sprite2D.set_rotation_degrees(90)
 	
 		secureDirection = direction
@@ -66,20 +66,25 @@ func _process(delta: float) -> void:
 func shmoeve(dir: Vector2, delta: float):
 	translate(dir * speed * delta)
 
-#TODO left and right trail
-
-func trailRight():
+func trailHori(dir):
 	var sprite = Sprite2D.new()
 	sprite.texture = horizontal
-	sprite.position = Vector2(self.position[0] + 100, self.position[1])
+	if dir == "right":
+		sprite.position = Vector2(self.position[0] + 100, self.position[1])
+	else:
+		sprite.position = Vector2(self.position[0] - 100, self.position[1])
+
 	trailHolder.add_child(sprite)
 
-func trailUp(): #change trail sprite for direction
+func trailVert(dir): #change trail sprite for direction
 	var sprite = Sprite2D.new()
 	sprite.texture = verticle
 	sprite.scale = Vector2(0.75, 1)
 	sprite.z_index = 1
-	sprite.position = Vector2(self.position[0], self.position[1] + 150)
+	if dir == "up":
+		sprite.position = Vector2(self.position[0], self.position[1] + 150)
+	else:
+		sprite.position = Vector2(self.position[0], self.position[1] - 150)
 	trailHolder.add_child(sprite)
 
 
