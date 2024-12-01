@@ -13,10 +13,12 @@ var wayPoint = Vector2(0, 0)
 var distanceTraveled = 0 ##Used for tracking trail sprite laying
 const verticle = preload("res://sprites/Dino/VerticalMovementNeck.png")
 const horizontal = preload("res://sprites/Dino/DinoNeckHorizontal.png")
+var trailHolder : Node2D 
 
 signal waypoint_reached
 
 func _ready() -> void:
+	trailHolder = self.get_parent().find_child("TrailHolder")
 	wayPoint = Vector2(self.position.x, self.position.y - fuckingy)
 
 # Get his ass movin AND schmoovin.
@@ -70,15 +72,15 @@ func trailRight():
 	var sprite = Sprite2D.new()
 	sprite.texture = horizontal
 	sprite.position = Vector2(self.position[0] + 100, self.position[1])
-	self.get_parent().add_child(sprite)
+	trailHolder.add_child(sprite)
 
 func trailUp(): #change trail sprite for direction
 	var sprite = Sprite2D.new()
 	sprite.texture = verticle
-	sprite.scale = Vector2(0.75, 0.75)
+	sprite.scale = Vector2(0.75, 1)
 	sprite.z_index = 1
-	sprite.position = Vector2(self.position[0], self.position[1] + 100)
-	self.get_parent().add_child(sprite)
+	sprite.position = Vector2(self.position[0], self.position[1] + 150)
+	trailHolder.add_child(sprite)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

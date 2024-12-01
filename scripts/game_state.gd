@@ -10,6 +10,9 @@ var _segment: Segment
 @export
 var _player: Player
 
+@export
+var trailHolder : Node2D
+
 #region Singleton
 static var _instance: GameState
 
@@ -54,6 +57,9 @@ func reset_segment() -> void:
 	_player.direction = Vector2.UP
 	_player.wayPoint = _player.position + (Vector2.UP * 256)
 	_player.waypoint_reached.connect(_enable_the_death_barrier)
+	
+	for child in trailHolder.get_children():
+		child.queue_free()
 	
 func _enable_the_death_barrier() -> void:
 	_segment.set_death_barrier_enabled(true)

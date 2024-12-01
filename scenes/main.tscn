@@ -6,11 +6,12 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="GameState" type="Node" parent="." node_paths=PackedStringArray("scoreText", "_segment", "_player")]
+[node name="GameState" type="Node" parent="." node_paths=PackedStringArray("scoreText", "_segment", "_player", "trailHolder")]
 script = ExtResource("1_8ehgd")
 scoreText = NodePath("../ScoreText")
 _segment = NodePath("../Segment")
 _player = NodePath("../Player")
+trailHolder = NodePath("../TrailHolder")
 
 [node name="Segment" parent="." instance=ExtResource("2_bhk03")]
 
@@ -26,3 +27,5 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Score: 0"
 fit_content = true
 autowrap_mode = 0
+
+[node name="TrailHolder" type="Node2D" parent="."]
