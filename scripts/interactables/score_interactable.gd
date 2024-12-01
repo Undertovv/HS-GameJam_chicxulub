@@ -8,7 +8,7 @@ var score: int
 var _animation_player: AnimationPlayer
 
 func run_interaction() -> void:
-	monitorable = false
+	set_deferred("monitorable", false)
 	GameState.get_instance().add_score(score)
 	
 	_animation_player.play("explode")
