@@ -88,6 +88,9 @@ func start_game() -> void:
 	_score_label.show()
 	get_tree().paused = false
 	
+	_segment.set_death_barrier_enabled(false)
+	_player.waypoint_reached.connect(_enable_the_death_barrier)
+	
 func quit_to_title() -> void:
 	_game_over_ui.hide()
 	_score_label.hide()

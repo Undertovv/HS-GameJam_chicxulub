@@ -21,7 +21,7 @@ _game_over_ui = NodePath("../UI/GameOver")
 [node name="Segment" parent="." instance=ExtResource("2_bhk03")]
 
 [node name="Player" parent="." instance=ExtResource("3_7vldf")]
-position = Vector2(660, 1152)
+position = Vector2(660, 1408)
 
 [node name="TrailHolder" type="Node2D" parent="."]
 
