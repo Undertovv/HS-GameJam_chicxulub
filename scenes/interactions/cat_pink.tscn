@@ -111,7 +111,7 @@ _data = {
 [node name="CatPink" type="Area2D" node_paths=PackedStringArray("_animation_player")]
 monitoring = false
 script = ExtResource("1_qjvm2")
-score = 200
+score = 500
 _animation_player = NodePath("AnimationPlayer")
 
 [node name="Cat" type="Sprite2D" parent="."]
