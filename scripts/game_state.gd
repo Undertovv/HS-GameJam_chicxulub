@@ -13,6 +13,20 @@ var _player: Player
 @export
 var trailHolder : Node2D
 
+@export_category("UI")
+
+@export
+var _title_ui: Control
+@export
+var _score_label: RichTextLabel
+@export
+var _game_over_ui: Control
+
+func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
+	
+	get_tree().paused = true
+
 #region Singleton
 static var _instance: GameState
 
@@ -43,8 +57,9 @@ signal player_died
 
 ## Kills the player
 func johnathon() -> void:
-	#get_tree().quit()
 	player_died.emit()
+	get_tree().paused = true
+	_game_over_ui.show()
 #endregion
 
 #region Segment Resetting
@@ -64,4 +79,18 @@ func reset_segment() -> void:
 func _enable_the_death_barrier() -> void:
 	_segment.set_death_barrier_enabled(true)
 	_player.waypoint_reached.disconnect(_enable_the_death_barrier)
+#endregion
+
+#region Logical Flow
+func start_game() -> void:
+	_title_ui.hide()
+	_score_label.text = "Score: 0"
+	_score_label.show()
+	get_tree().paused = false
+	
+func quit_to_title() -> void:
+	_game_over_ui.hide()
+	_score_label.hide()
+	
+	_title_ui.show()
 #endregion
