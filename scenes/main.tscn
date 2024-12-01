@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcrkusgctyve7"]
+[gd_scene load_steps=5 format=3 uid="uid://dcrkusgctyve7"]
 
 [ext_resource type="Script" path="res://scripts/game_state.gd" id="1_8ehgd"]
 [ext_resource type="PackedScene" uid="uid://w2hh7583bu47" path="res://scenes/segment.tscn" id="2_bhk03"]
 [ext_resource type="PackedScene" uid="uid://ck83h50o4mawn" path="res://scenes/player.tscn" id="3_7vldf"]
+[ext_resource type="PackedScene" uid="uid://cdp15j1d1w352" path="res://scenes/ui/game_over.tscn" id="4_t04md"]
 
 [node name="Main" type="Node2D"]
 
@@ -29,3 +30,6 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="TrailHolder" type="Node2D" parent="."]
+
+[node name="GameOver" parent="." instance=ExtResource("4_t04md")]
+visible = false
