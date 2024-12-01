@@ -55,9 +55,10 @@ func _process(delta: float) -> void:
 			wayPoint = self.position + Vector2(fuckingx, 0)
 			trailHori("left")
 			$Sprite2D.set_rotation_degrees(90)
+			
+		direction = nextDirection
 		
-	shmoeve(nextDirection, delta) #move and/or shmove
-	direction = nextDirection
+	shmoeve(direction, delta) #move and/or shmove
 	
 
 func shmoeve(dir: Vector2, delta: float):
